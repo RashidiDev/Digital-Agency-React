@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/assets/fonts/Barlow-Regular.ttf);
+  }
+  @font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 500;
+    src: url(/assets/fonts/Barlow-Medium.ttf);
+  }
+  @font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 600;
+    src: url(/assets/fonts/Barlow-SemiBold.ttf);
+  }
+  @font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 700;
+    src: url(/assets/fonts/Barlow-Bold.ttf);
+  }
+  @font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 800;
+    src: url(/assets/fonts/Barlow-ExtraBold.ttf);
+  }
+
+  .primary-icon-50::before {
+    bottom: -0.1rem;
+    left: -2px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(25, 25, 25, 1) 100%);
+    z-index: -1;
+    position: absolute;
+    width: calc(100% + 4px);
+    height: 30%;
+    content: "";
+  }
+
+  .primary-icon-50::after {
+    top: 0rem;
+    right: 0rem;
+    background: linear-gradient(50deg, rgba(255, 255, 255, 0) 60%, rgba(158, 255, 0, 0.3) 100%);
+    opacity: 0.2;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-top-right-radius: 0.5rem;
+    content: "";
+  }
+  .primary-icon-sm::after {
+    top: 0rem;
+    right: 0rem;
+    background: linear-gradient(50deg, rgba(255, 255, 255, 0) 60%, rgba(158, 255, 0, 0.3) 100%);
+    opacity: 0.2;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-top-right-radius: 0.375rem;
+    content: "";
+  }
+
+  .faq-radio:checked + div > span {
+    @apply text-primary-900;
+  }
+  .faq-radio:checked ~ .faq-title-wrapper > h1 {
+    @apply text-primary-700;
+  }
+  .faq-radio:checked ~ .faq-title-wrapper > label > svg {
+    @apply rotate-45 fill-primary-700;
+  }
+
+  div:has(.faq-radio:checked) ~ .accordion-content {
+    @apply h-36;
+  }
+}
+body {
+  @apply bg-gray-900;
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-md text-sm font-medium;
+    padding: 0.75rem 1.375rem;
+  }
+
+  .primary-icon-50 {
+    @apply relative z-0 w-fit rounded-lg border border-gray-800 bg-gray-900 p-5;
+  }
+
+  .services-icon .primary-icon-sm {
+    @apply relative z-0 w-fit rounded-md border border-gray-800 bg-gray-900 p-4;
+  }
+
+  .range-input {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #333333;
+    height: 0.125rem;
+    pointer-events: none;
+  }
+  .range-input::-webkit-slider-runnable-track {
+    pointer-events: none;
+  }
+  .range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    height: 1.25rem;
+    aspect-ratio: 1;
+    background-color: #9eff00;
+    border: 0.25rem solid #4c4c4d;
+    border-radius: 5rem;
+    pointer-events: all;
+  }
+  #budgetSelect1 {
+    background-color: transparent;
+    z-index: 2;
+  }
+
+  .footer-icon {
+    position: relative;
+    border-radius: 0.375rem;
+    border: 1px solid #2e2e2e;
+    background: #242424;
+    background: linear-gradient(180deg, #242424 0%, #191919 100%);
+    padding: 1rem;
+    z-index: 0;
+  }
+  .footer-icon::after {
+    position: absolute;
+    content: "";
+    bottom: -0.1rem;
+    left: -2px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #191919 100%);
+    width: calc(100% + 4px);
+    height: 30%;
+    z-index: -1;
+  }
+}
