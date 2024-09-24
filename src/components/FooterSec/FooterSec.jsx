@@ -4,7 +4,7 @@ export default function FooterSec() {
       {/* TOP SECTION */}
       <div className="flex items-center justify-between py-10 md:flex-col md:gap-[1.875rem]">
         <a href="#" className="shrink-0 cursor-pointer">
-          <img src="/assets/images/logo.png" alt="website logo footer" />
+          <img src="/assets/images/Logo.png" alt="website logo footer" />
         </a>
         <ul className="flex flex-wrap items-center justify-center font-semibold text-white">
           <li className="mx-1 cursor-pointer rounded-md px-5 py-3 text-sm hover:bg-gray-800">
