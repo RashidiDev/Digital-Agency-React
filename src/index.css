@@ -34,6 +34,10 @@
     src: url(/assets/fonts/Barlow-ExtraBold.ttf);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   .primary-icon-50::before {
     bottom: -0.1rem;
     left: -2px;

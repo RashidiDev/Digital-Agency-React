@@ -1,19 +1,27 @@
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/20/solid";
+import { useState } from "react";
 
 export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="relative z-10 mx-auto flex max-w-[90%] items-center justify-between py-5">
       <a href="#" className="shrink-0">
         <img className="w-fit" src="/assets/images/Logo.png" alt="Logo" />
       </a>
-      <button id="open-nav-menu-btn" className="hidden rounded-md bg-gray-800 p-[0.375rem] hover:bg-gray-700 lg:block">
+      <button
+        onClick={() => setIsOpen(true)}
+        id="open-nav-menu-btn"
+        className="hidden rounded-md bg-gray-800 p-[0.375rem] hover:bg-gray-700 lg:block"
+      >
         <Bars3BottomRightIcon className="h-5 w-5 fill-primary-600" />
       </button>
       <div
         id="nav-menu"
-        className="transition-all duration-500 lg:fixed lg:-right-full lg:top-0 lg:z-50 lg:grid lg:h-screen lg:w-52 lg:content-start lg:bg-gray-900/30 lg:pt-5 lg:backdrop-blur-md sm:w-full"
+        className={`${isOpen ? "lg:right-0" : "lg:-right-full"} transition-all duration-500 lg:fixed lg:-right-full lg:top-0 lg:z-50 lg:grid lg:h-screen lg:w-52 lg:content-start lg:bg-gray-900/30 lg:pt-5 lg:backdrop-blur-md sm:w-full`}
       >
         <button
+          onClick={() => setIsOpen(false)}
           id="close-nav-menu-btn"
           className="mb-5 mr-5 hidden w-fit self-end justify-self-end rounded-md bg-gray-800 p-[0.375rem] hover:bg-gray-700 lg:block"
         >
